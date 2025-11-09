@@ -1,4 +1,3 @@
-// lib/widgets/add_edit_dialog.dart
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../model/items.dart';

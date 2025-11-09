@@ -1,4 +1,3 @@
-// lib/widgets/item_tile.dart
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sample/model/items.dart';
