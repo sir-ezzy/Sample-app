@@ -86,7 +86,6 @@ class ItemController extends GetxController {
       final title = baseTitles[index % baseTitles.length];
       final suffix = index >= baseTitles.length ? ' #${index + 1}' : '';
 
-      // Give every item a unique description
       final descriptions = [
         "Remember to buy milk, eggs, and bread.",
         "Wish her happy birthday and ask about weekend plans.",
