@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sample/model/items.dart';
+import 'package:sample/res/colors.dart';
 import '../controllers/item_controller.dart';
 
 class ItemTile extends StatelessWidget {
@@ -18,10 +19,10 @@ class ItemTile extends StatelessWidget {
       key: ValueKey(item.key),
       direction: DismissDirection.endToStart,
       background: Container(
-        color: Colors.red,
+        color: AppColor.red,
         alignment: Alignment.centerRight,
         padding: const EdgeInsets.only(right: 20),
-        child: const Icon(Icons.delete, color: Colors.white),
+        child: const Icon(Icons.delete, color: AppColor.white),
       ),
       onDismissed: (_) => controller.deleteItem(item),
       child: ListTile(

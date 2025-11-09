@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sample/model/items.dart';
-import 'package:sample/pages/home.dart';
+import 'package:sample/routes/app_routes.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -28,7 +28,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.light(useMaterial3: true),
       darkTheme: ThemeData.dark(useMaterial3: true),
       themeMode: ThemeMode.system,
-      home: const HomeScreen(),
+      initialRoute: AppRoutes.splashPage,
+      // home: const HomeScreen(),
     );
   }
 }
