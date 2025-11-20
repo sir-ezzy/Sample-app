@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hive_flutter/adapters.dart';
-import 'package:path_provider/path_provider.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:sample/controllers/item_controller.dart';
 import 'package:sample/model/items.dart';
 import 'package:sample/routes/app_routes.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
-  final dir = await getApplicationDocumentsDirectory();
-  await Hive.initFlutter(dir.path);
-
+  await Hive.initFlutter();
   Hive.registerAdapter(ItemsAdapter());
   await Hive.openBox<Items>('item');
+  Get.put(ItemController());
 
   runApp(const MyApp());
 }
@@ -29,7 +27,7 @@ class MyApp extends StatelessWidget {
       darkTheme: ThemeData.dark(useMaterial3: true),
       themeMode: ThemeMode.system,
       initialRoute: AppRoutes.splashPage,
-      // home: const HomeScreen(),
+      getPages: AppRoutes.pages,
     );
   }
 }

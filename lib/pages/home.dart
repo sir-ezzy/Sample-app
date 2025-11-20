@@ -10,7 +10,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(ItemController());
+    final controller = Get.find<ItemController>();
 
     return Scaffold(
       appBar: AppBar(
@@ -27,6 +27,7 @@ class HomeScreen extends StatelessWidget {
         if (controller.item.isEmpty) {
           return const Center(child: Text('No items yet. Add one!'));
         }
+        Future.delayed(Duration.zero, () {});
         return ListView.builder(
           itemCount: controller.item.length,
           padding: EdgeInsets.symmetric(horizontal: 5),
